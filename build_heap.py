@@ -36,7 +36,7 @@ def main():
 
 
     # input from keyboard
-    n = int(input().strip())
+    n = int(input().replace('\r\n', ''))
     data = list(map(int, input().split()))
 
     # checks if lenght of data is the same as the said lenght
