@@ -36,19 +36,19 @@ def main():
 
 
     # input from keyboard
-    n = int(input().strip())
-    data = list(map(int, input().strip().split()))
+    n = int(input())
+    data = list(map(int, input().split()))
 
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
     
     
-    mode = input().strip()
+    mode = input()
     
     assert mode == 'I' or mode == 'F'
     
     swaps = []
-    if mode == 'F':  # read data from file
+    if mode == 'F':  
         with open('swap.txt', r) as file:
             for line in file:
                 swaps.append(tuple(map(int, line.split())))
