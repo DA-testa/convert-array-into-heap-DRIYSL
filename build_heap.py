@@ -36,14 +36,14 @@ def main():
 
 
     # input from keyboard
-    n = int(input())
+    n = int(input().stirp())
     data = list(map(int, input().split()))
 
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
     
     
-    mode = input()
+    mode = input().strip()
     
     assert mode == 'I' or mode == 'F'
     
