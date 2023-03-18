@@ -3,10 +3,28 @@
 
 def build_heap(data):
     swaps = []
+    size = len(data)
+    
+    for i in range(size // 2, -1 -1):
+        while True:
+            min_element = i
+            left_child = 2*i + 1
+            right_child = 2*i + 2
+            
+            if left_child < size and data[left_child] < data[min_element]:
+                min_element = left_child
+            if right_child < size and data[right_child] < data[min_element]:
+                min_element = right_child
+                
+            if i == min_element:
+                break
+                
+            swaps.append((i, min_element))
+            data[i], data[min_element] = data[min_element],data[i]
+            
+            i = min_element
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
-
-
     return swaps
 
 
