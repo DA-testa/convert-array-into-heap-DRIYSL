@@ -36,7 +36,7 @@ def main():
 
 
     # input from keyboard
-    n = int(input().strip())
+    n = int(input())
     data = list(map(int, input().split()))
 
     # checks if lenght of data is the same as the said lenght
@@ -48,13 +48,12 @@ def main():
     assert mode == 'I' or mode == 'F'
     
     swaps = []
-    if mode == 'F':  
+    if mode == 'I':
+        swaps = build_heap(data)
+    elif mode == 'F':  
         with open('swap.txt', r) as file:
             for line in file:
                 swaps.append(tuple(map(int, line.split())))
-    
-    if mode == 'I':
-        swaps = build_heap(data)
         
     valid = all(data[i] <= data[2*i +1] and data[i] <= 2*i +2 for i in range (n//2))
 
