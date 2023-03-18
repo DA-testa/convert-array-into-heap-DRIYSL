@@ -41,6 +41,18 @@ def main():
 
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
+    
+    
+    mode = input()
+    
+    assert mode == 'I' or mode == 'F'
+    
+    swaps = []
+    if mode == 'F':  # read data from file
+        with open('swap.txt', r) as file:
+            for line in file:
+                swaps.append(tuple(map(int, line.split())))
+    
 
     # calls function to assess the data 
     # and give back all swaps
