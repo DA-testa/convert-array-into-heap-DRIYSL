@@ -37,7 +37,7 @@ def main():
 
     # input from keyboard
     n = int(input().strip())
-    data = list(map(int, input().split()))
+    data = list(map(int, input().strip().split()))
 
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
