@@ -5,7 +5,7 @@ def build_heap(data):
     swaps = []
     size = len(data)
     
-    for i in range(size // 2, -1 -1):
+    for i in range(size // 2, -1, -1):
         while True:
             min_element = i
             left_child = 2*i + 1
@@ -56,7 +56,7 @@ def main():
     if mode == 'I':
         swaps = build_heap(data)
         
-    valid = all(data[i] <= data[2*i +1] and data[i] <= 2*i +2] for i in range (n//2))
+    valid = all(data[i] <= data[2*i +1] and data[i] <= 2*i +2 for i in range (n//2))
 
     # calls function to assess the data 
     # and give back all swaps
@@ -68,7 +68,7 @@ def main():
     # output all swaps
     print(len(swaps))
     for i in swaps:
-        print(i)
+        print(i[0], i[1])
 
 
 if __name__ == "__main__":
