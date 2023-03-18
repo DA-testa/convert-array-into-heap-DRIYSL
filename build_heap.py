@@ -43,7 +43,7 @@ def main():
     assert len(data) == n
     
     
-    mode = input()
+    mode = input().strip()
     
     assert mode == 'I' or mode == 'F'
     
