@@ -53,10 +53,13 @@ def main():
             for line in file:
                 swaps.append(tuple(map(int, line.split())))
     
+    if mode == 'I':
+        swaps = build_heap(data)
+        
+    valid = all(data[i] <= data[2*i +1] and data[i] <= 2*i +2] for i in range (n//2))
 
     # calls function to assess the data 
     # and give back all swaps
-    swaps = build_heap(data)
 
     # TODO: output how many swaps were made, 
     # this number should be less than 4n (less than 4*len(data))
@@ -64,8 +67,8 @@ def main():
 
     # output all swaps
     print(len(swaps))
-    for i, j in swaps:
-        print(i, j)
+    for i in swaps:
+        print(i)
 
 
 if __name__ == "__main__":
