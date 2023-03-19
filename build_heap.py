@@ -29,33 +29,29 @@ def build_heap(data):
 
 
 def main():
-    
     # TODO : add input and corresponding checks
     # add another input for I or F 
     # first two tests are from keyboard, third test is from a file
-
-
     # input from keyboard
-    n = int(input().strip().replace('\r', ''))
+    n = int(input().strip())
     data = list(map(int, input().split()))
+    
 
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
     
-    
     mode = input().strip()
-    
     assert mode == 'I' or mode == 'F'
     
     swaps = []
     if mode == 'I':
         swaps = build_heap(data)
     elif mode == 'F':  
-        with open('swap.txt', r) as file:
+        with open('swap.txt', 'r') as file:
             for line in file:
                 swaps.append(tuple(map(int, line.split())))
         
-    valid = all(data[i] <= data[2*i +1] and data[i] <= 2*i +2 for i in range (n//2))
+    valid = all(data[i] <= data[2*i +1] and data[i] <= data[2*i +2] for i in range (n//2))
 
     # calls function to assess the data 
     # and give back all swaps
