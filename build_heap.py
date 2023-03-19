@@ -27,7 +27,7 @@ def main():
     
     read_input = input()
     
-    if read.startswith('I'):
+    if read_input.startswith('I'):
         n = int(input())
         data = list(map(int, input().split()))
         assert len(data) == n
@@ -36,7 +36,7 @@ def main():
         for i, j in swaps:
             print(i, j)
             
-    elif read.startswith('F'):
+    elif read_input.startswith('F'):
         file = input().strip()
         with open(f'data/{file}', 'r') as f:
             n = int(f.readline().strip())
