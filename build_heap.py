@@ -30,7 +30,9 @@ def main():
     # first two tests are from keyboard, third test is from a file
     
     # input from keyboard
-    n = int(input())
+    read_input = input()
+    input_type, n = read_input.split()
+    n = int(n)
     data = list(map(int, input().split()))
     
 
@@ -49,7 +51,8 @@ def main():
 
 
     # output all swaps
-    print(len(swaps))
+    print(input_type, len(swaps))
+    
     for i, j in swaps:
         print(i, j)
 
