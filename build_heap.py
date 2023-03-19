@@ -38,7 +38,7 @@ def main():
             
     elif read_input.startswith('F'):
         file = input().strip()
-        with open(f'data/{file}', 'r') as f:
+        with open(f'tests/{file}', 'r') as f:
             n = int(f.readline().strip())
             data = list(map(int, f.readline().split()))
         assert len(data) == n
